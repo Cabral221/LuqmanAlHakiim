@@ -1,0 +1,62 @@
+/* Style the button that is used to open and close the collapsible content */
+.collapsible {
+    background-color: #04025f;
+    color: white;
+    cursor: pointer;
+    padding: 20px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+.collapsible:after {
+    content: '\02795'; /* Unicode character for "plus" sign (+) */
+    font-size: 14px;
+    color: #e3342f;
+    float: right;
+    margin-left: 5px;
+}
+
+.active:after {
+    content: "\2796"; /* Unicode character for "minus" sign (-) */
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.active, .collapsible:hover {
+    background-color: black;
+}
+
+/* Style the collapsible content. Note: hidden by default */
+.content {
+    border: 1px solid red;
+    color: black;
+    padding: 0 18px;
+    background-color: white;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+}
+
+/* shadow for bootstrap 3 */
+.word_of {
+    background-color: rgb(255, 255, 255);
+    padding:5px 15px 5px 15px;
+    border-top: 1px;
+    border-style: solid;
+    border-color: #00000000;
+    
+    border-left-width: 16px;
+    border-left-color: rgb(4, 2, 95);
+    border-radius: 0 5px 5px 0;
+    box-shadow: 5px 5px 10px 3px rgba(4, 2, 95,0.3);
+}
+
+.word_of_img {
+    position: relative;
+    max-width: 80%;
+    height: auto;
+    border-radius: 10px;
+}
