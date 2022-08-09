@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers\Admin\Programms;
-use\App\Models\Program;
+use \App\Models\Program;
 use App\Models\Niveau;
 use App\Models\Diplome;
 use App\Models\Filiere;
