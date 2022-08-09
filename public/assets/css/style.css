@@ -605,8 +605,8 @@ fieldset[disabled] .btn-primary.active {
 
 .navbar-default .navbar-nav>.active>a {
     border-radius: 0;
-    background-color: transparent;
-    color: #333;
+    background-color: black;
+    color: #fff;
     -webkit-transition: all .5s ease-in-out;
     -moz-transition: all .5s ease-in-out;
     -o-transition: all .5s ease-in-out;
@@ -632,7 +632,7 @@ fieldset[disabled] .btn-primary.active {
 
 .navbar-default .navbar-nav>.active>a:hover,
 .navbar-default .navbar-nav>.active>a:focus {
-    color: #333;
+    color: #fff;
     background-color: #333
 }
 

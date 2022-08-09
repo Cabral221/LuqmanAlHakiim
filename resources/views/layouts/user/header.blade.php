@@ -35,16 +35,16 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="main-navigation">
             <ul class="nav navbar-nav navbar-right">
-                <li>
-                    <a href="{{ route('user.welcome') }}" class="{{ isset($current_page) && $current_page == 'Accueil' ? 'active-page' : '' }}">Accueil</a>
+                <li class="{{ isset($current_page) && $current_page == 'home' ? 'active' : '' }}">
+                    <a href="{{ route('user.welcome') }}" >Accueil</a>
                 </li>
 
-                <li>
-                    <a href="#" class="{{ isset($current_page) && $current_page == 'Présentation' ? 'active-page' : '' }}">Présentation</a>
+                <li class="{{ isset($current_page) && $current_page == 'Présentation' ? 'active' : '' }}">
+                    <a href="#" >Présentation</a>
                 </li>
 
-                <li class="dropdown">
-                    <a href="{{ route('user.programs.index') }}" class="dropdown-toggle {{ isset($current_page) && $current_page == 'programs' ? 'active-page' : '' }}" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Programmes <span class="caret"></span></a>
+                <li class="dropdown {{ isset($current_page) && $current_page == 'programs' ? 'active' : '' }}">
+                    <a href="{{ route('user.programs.index') }}" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Programmes <span class="caret"></span></a>
                     <ul class="dropdown-menu" aria-labelledby="programmes">
                         <li><a href="#">Our Story</a></li>
                         <li><a href="#">Our Team</a></li>
@@ -52,15 +52,15 @@
                     </ul>
                 </li>
 
-                <li>
-                    <a href="#"  class="{{ isset($current_page) && $current_page == 'bibliothéque' ? 'active-page' : '' }}">Bibliothéque</a>
+                <li class="{{ isset($current_page) && $current_page == 'library' ? 'active' : '' }}">
+                    <a href="{{ route('user.library') }}">Bibliothéque</a>
                 </li>
                 <li>
                     <a href="{{ route('user.contact') }}" class="{{ isset($current_page) && $current_page == 'contact' ? 'active-page' : '' }}">Contact</a>
                 </li>
                 @guest
-                    <li class="dropdown">
-                        <a href="{{ route('user.member') }}" class="badge {{ isset($current_page) && $current_page == 'member' ? 'active-page' : '' }}">Se connecter</span></a>
+                    <li class="dropdown {{ isset($current_page) && $current_page == 'member' ? 'active' : '' }}">
+                        <a href="{{ route('user.member') }}">Se connecter</span></a>
                     </li>
                 @else
                 <li class="nav-item dropdown">
