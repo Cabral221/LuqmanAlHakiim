@@ -10,6 +10,7 @@
 <link href="{{ asset('assets/css/plugins.css') }}" rel="stylesheet">
 <!-- Custom CSS -->
 <link href="{{ asset('assets/css/style.css') }}" rel="stylesheet">
+<link href="{{ asset('css/user/custom-bootstrap.css') }}" rel="stylesheet">
 <link href="{{ asset('css/user/style.css') }}" rel="stylesheet">
 <!-- Custom Fonts -->
 {{-- <link href="{{ asset('assets/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet" type="text/css"> --}}

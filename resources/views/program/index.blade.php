@@ -2,7 +2,7 @@
 
 @section('text-header')
 <!-- Header -->
-<section class="dark-wrapper opaqued parallax" data-parallax="scroll" data-image-src="{{asset('assets/img/bg/bg2.jpg')}}" data-speed="0.7">
+<section class="dark-wrapper opaqued parallax" data-parallax="scroll" data-image-src="{{ asset('default-slide.jpg') }}" data-speed="0.7">
     <div class="section-inner pad-top-200">
         <div class="container vertical-center">
             <div class="intro-text vertical-center text-center smoothie">

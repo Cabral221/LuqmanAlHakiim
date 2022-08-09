@@ -346,6 +346,7 @@ body {
 
 .btn {
     font-family: 'Montserrat', "Helvetica Neue", Helvetica, Arial, sans-serif;
+    border-radius: 5px;
 }
 
 .btn:focus,
@@ -362,7 +363,7 @@ body {
     border-radius: 0;
     /* text-transform: uppercase; */
     font-weight: 700;
-    color: #04025f;
+    color: #fff;
     background-color: transparent;
     padding: 15px 0px;
     letter-spacing: 1px;
