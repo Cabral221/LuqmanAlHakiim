@@ -42,7 +42,7 @@
     </div>
 </div>
 
-<div class="white-wrapper py-5">
+<section class="white-wrapper py-5">
     <div class="container">
         <h2 class="section-title text-center">Nos Programmes</h2>
         <div class="row">
@@ -60,9 +60,9 @@
             @endforeach
         </div>
     </div>  
-</div>
+</section>
 
-
+{{-- Old Programs section --}}
 <section class="white-wrapper">
     <div class="py-5">
         <div class="container text-dark">
@@ -160,9 +160,9 @@
                 </div>
             </div>
             
+            {{-- Carousel galery --}}
             <div class="row">
                 <div class="col-12">
-                    {{-- Carousel galery --}}
                     <section class="opaqued light-opaqued parallax">
                         <div class="section-inner2">
                             <div class="container">
@@ -191,13 +191,15 @@
                             </div>
                         </div>
                     </section>
-                    {{-- /end Carousel galery --}}
                 </div>
             </div>
+            {{-- /end Carousel galery --}}
         </div>
     </div>
 </section>
+{{-- END Old Program section --}}
 
+{{-- Testimonial Section --}}
 <div class="bg-white text-center pt-5 pb-5">
     <div class="container pt-3">
         <h3>Testimonials</h3>
@@ -226,7 +228,9 @@
         @endif
     </div>
 </div>
+{{-- END Testimonial Section --}}
 
+{{-- Document Section --}}
 <div class="bg-dark text-white pt-5 pb-5">
     <div class="container">
         
@@ -253,7 +257,7 @@
         
     </div>
 </div>
-
+{{-- End Doc Section --}}
 
 {{-- Followors --}}
 <div class="followers bg-primary">
