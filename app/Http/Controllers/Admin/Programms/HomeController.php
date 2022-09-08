@@ -1,10 +1,10 @@
 <?php
 
 namespace App\Http\Controllers\Admin\Programms;
-use \App\Models\Program;
 use App\Models\Niveau;
 use App\Models\Diplome;
 use App\Models\Filiere;
+use \App\Models\Program;
 use Illuminate\Http\Request;
 use MercurySeries\Flashy\Flashy;
 use App\Http\Controllers\Controller;
@@ -24,26 +24,17 @@ class HomeController extends Controller
         return view('admin.programms.programms.index',compact(['programms','fil', 'newfil','niv','diplome']));
     }
 
-    public function create()
-    {
-        
-    }
-
-    public function edit()
-    {
-        
-    }
 
     public function update(Request $request)
     {
-            $validator = validator::make($request->all(),[
+        $validator = validator::make($request->all(),[
             'libele' => 'required'
-            ]);
-            
-            if ($validator->fails()) {
-                Flashy::error($validator->messages()->first());
-                return redirect()->back();
-            }
+        ]);
+
+        if ($validator->fails()) {
+            Flashy::error($validator->messages()->first());
+            return redirect()->back();
+        }
         $edite_prog = Program::findOrFail($request->prog);
         $edite_prog->libele = $request->input('libele');
         $edite_prog->save();
@@ -53,24 +44,27 @@ class HomeController extends Controller
 
     public function store(Request $request)
     {
-        $validator = Validator::make($request->all(), [
-            'libele' => 'required'
+        // Validate request
+        $this->validate($request, [
+            'program_libele' => 'required',
+            'program_img' => 'required|image|max:5000',
+            'program_desc' => 'required'
         ]);
 
-        if ($validator->fails()) {
-            Flashy::error($validator->messages()->first());
-            return redirect()->back();
-        }
-      $prog = new Program();
-      $prog->libele = $request->input('libele');
-      $prog->save();
-      Flashy::success('Your program has been successfully added');
-      return redirect()->back();
+        // Upload File to Database
+        $path = $request->file('program_img')->storePublicly('uploads/programs', ['disk' => 'public']);
 
-        
+        // Create the program on passed validatiion
+        Program::create([
+            'libele' => $request->program_libele,
+            'image' => $path,
+            'description' => $request->program_desc
+        ]);
+
+        Flashy::success('Your program has been successfully added');
+        return redirect()->back();
     }
 
-  
     public function destroy($id)
     {
         $delete_prog = Program::find($id);

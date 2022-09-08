@@ -1,26 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
-  <meta name="author" content="Ousmane Diallo">
+  <meta name="author" content="Abdourahmane Diop">
   <meta name="csrf-token" content="{{ csrf_token() }}">
 
   <title>BBC | Administration</title>
-  <link rel="icon" href="images/logo.png">
+  <link rel="shortcut icon" href="{{ asset('images/logo.png') }}">
 
   @include('layouts.admin.links2')
   @yield('css')
 
 </head>
 <body id="page-top">
-  
+
   <!-- Page Wrapper -->
   <div id="wrapper">
-    
+
     @include('layouts.admin.sidebar2')
 
     <!-- Content Wrapper -->
@@ -65,11 +65,10 @@
   </div>
 
   {{-- <script src="https://cdn.ckeditor.com/4.15.0/standard/ckeditor.js"></script> --}}
-  @include('flashy::message')
   @include('layouts.admin.script2')
+  @include('flashy::message')
 
   @yield('js')
 </body>
 </html>
 
-  

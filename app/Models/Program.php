@@ -12,12 +12,14 @@ use Illuminate\Database\Eloquent\Model;
 class Program extends Model
 {
 
+    public $fillable = ['libele', 'image', 'description'];
+
     public function getRouteKeyName()
     {
         return 'slug';
     }
 
-    protected static function boot() 
+    protected static function boot()
     {
         parent::boot();
         static::creating(function ($program) {
