@@ -3,16 +3,16 @@
     "type": "project",
     "description": "The Laravel Framework.",
     "keywords": [
-        "bbc",
-        "university",
-        "new"
+        "daara",
+        "luqman",
+        "hakiim"
     ],
     "license": "MIT",
     "require": {
         "php": "^7.2.5|^8.0",
         "doctrine/dbal": "^2.10",
         "laravel/framework": "7.30.6",
-        "fideloper/proxy": "4.4", 
+        "fideloper/proxy": "4.4",
         "fruitcake/laravel-cors": "2.0",
         "guzzlehttp/guzzle": "^6.3.1|^7.0.1",
         "laravel/tinker": "^2.5",
