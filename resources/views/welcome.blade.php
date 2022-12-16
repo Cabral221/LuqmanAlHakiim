@@ -1,4 +1,4 @@
-@extends('layouts.user.app',['title' => 'Bienvenu'])
+@extends('layouts.user.app',['title' => 'Bienvenue'])
 
 @section('css')
 <link rel="stylesheet" href="{{ asset('css/home.css') }}">
@@ -10,7 +10,7 @@
     <div class="container vertical-center">
         <div class="intro-text vertical-center text-center smoothie">
             <h1 class="intro-heading wow fadeIn heading-font" data-wow-delay="0.2s">{{ config('app.name', 'Laravel') }}</h1>
-            <div class="intro-sub-heading wow fadeIn secondary-font" data-wow-delay="0.4s"> 
+            <div class="intro-sub-heading wow fadeIn secondary-font" data-wow-delay="0.4s">
                 <span class="rotate">
                     @foreach ($programs as $program) {{ $program->libele }}, @endforeach
                 </span>
@@ -22,6 +22,7 @@
 @endsection
 
 @section('content')
+{{-- Mot de bienvenue --}}
 <div class="white-wrapper py-5">
     <div class="container">
         <div class="word_of m-3">
@@ -41,7 +42,7 @@
         </div>
     </div>
 </div>
-
+{{-- Fin du Mot de Bienvenue --}}
 <section class="white-wrapper py-5">
     <div class="container">
         <h2 class="section-title text-center">Nos Programmes</h2>
@@ -59,8 +60,9 @@
             </div>
             @endforeach
         </div>
-    </div>  
+    </div>
 </section>
+
 
 {{-- Old Programs section --}}
 <section class="white-wrapper">
@@ -76,9 +78,9 @@
                     <button type="button" class="collapsible">
                         <div style="display: inline">
                             <h3 class="col text-left">{{ strtoupper($program->libele) }}</h3>
-                            <small class="col text-right mr-5">Degree: 
+                            <small class="col text-right mr-5">Degree:
                                 @foreach($program->diplomes as $diplome)
-                                <span class="text-danger">{{ $diplome->libele }} </span> | 
+                                <span class="text-danger">{{ $diplome->libele }} </span> |
                                 @endforeach
                             </small>
                         </div>
@@ -102,7 +104,7 @@
                                 @else
                                 <p>No class for this program...</p>
                                 @endif
-                            </div>     
+                            </div>
                         </div>
                     </div>
                     @endforeach
@@ -123,9 +125,8 @@
                                             <div>
                                                 <em>{{ $new->date }}</em>
                                             </div>
-                                            
                                         </div>
-                                    </div>            
+                                    </div>
                                 </a>
                             </div>
                             @endforeach
@@ -159,7 +160,7 @@
                     </div>
                 </div>
             </div>
-            
+
             {{-- Carousel galery --}}
             <div class="row">
                 <div class="col-12">
@@ -233,7 +234,7 @@
 {{-- Document Section --}}
 <div class="bg-dark text-white pt-5 pb-5">
     <div class="container">
-        
+
         <h3 class="text-center">Utils documents</h3>
         @if (isset($docs) && $docs->count() > 0)
         <div class="row pt-5 pb-5 text-white text-bold">
@@ -241,7 +242,7 @@
             <div class=" col-sm-6 col-xl-6 text-white p-3">
                 <div class="row">
                     <div class="col-sm-6 col-xs-6">
-                        <span style="font-size: 20px;font-weight:bold">{{ $doc->name }}</span> 
+                        <span style="font-size: 20px;font-weight:bold">{{ $doc->name }}</span>
                     </div>
                     <div class="col-sm-6 col-xs-6">
                         <a href="{{ asset($doc->url) }}" class="document">Download <i class="fas fa-download"></i></a>
@@ -253,8 +254,8 @@
         {{ $docs->links() }}
         @else
         <p class="text-center">Aucun document pour le moment</p>
-        @endif  
-        
+        @endif
+
     </div>
 </div>
 {{-- End Doc Section --}}
@@ -333,7 +334,7 @@
 <script>
     var coll = document.getElementsByClassName("collapsible");
     var i;
-    
+
     for (i = 0; i < coll.length; i++) {
         coll[i].addEventListener("click", function() {
             this.classList.toggle("active");
@@ -342,7 +343,7 @@
                 content.style.maxHeight = null;
             } else {
                 content.style.maxHeight = content.scrollHeight + "px";
-            } 
+            }
         });
     }
 </script>

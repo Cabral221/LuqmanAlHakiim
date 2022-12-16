@@ -1,13 +1,8 @@
 @extends('layouts/admin/app2')
+
+
 @section('body')
-<!-- <script>
-    tinymce.init({
-        selector:'textarea.description',
-        width: 570,
-        height: 200
-    });
-</script>  -->
-<!-- Begin Page Content -->
+
 <div class="container-fluid">
 
     <!-- Page Heading -->
@@ -61,6 +56,7 @@
                                 </div>
                             </form>
                             <div class="">
+                                <h3>Listes des programmes</h3>
                                 <table class="table table-bordered">
                                     <thead>
                                         <tr>
@@ -76,7 +72,7 @@
                                         <tr>
                                             <th scope="row">{{++$i}}</th>
                                             <td>{{$prog->libele}}</td>
-                                            <td><button type="button" class="btn btn-success btn-xs mb-1" style='border-radius:5%;'  data-id="{{$prog->id}}" data-libele="{{$prog->libele}}"  data-toggle="modal" data-target="#edit_progModal"><i class="far fa-edit"></i></button></td>
+                                            <td><button type="button" class="btn btn-success btn-xs mb-1" style='border-radius:5%;'  data-id="{{$prog->id}}" data-libele="{{$prog->libele}}"  data-toggle="modal" data-target="#edit_progModal_{{ $prog->id }}"><i class="far fa-edit"></i></button></td>
                                             <td>
                                                 <button type="submit" class="mr-3 btn btn-danger btn-xs mb-1" class="" style='border-radius:5%;'  onclick="event.preventDefault();document.querySelector('#form-delete-{{$prog->id}}').submit();"  name="delete" data-toggle="tooltip" title="supprimer"><i class="far fa-trash-alt"></i></button>
                                                 <form id="form-delete-{{$prog->id}}" action="{{route('admin.programms.programms.destroy',$prog->id)}}" method="post">
@@ -182,8 +178,6 @@
 
 
 
-
-
     <!-- Row pour ajout des diplome -->
     <div class="row">
         <!-- Area Chart -->
@@ -263,8 +257,6 @@
         </div>
     </div>
     <!-- fin du row des ajouts de diplome -->
-
-
 
 
     <!-- row de l'affichage des post -->
@@ -592,7 +584,7 @@
 
     <!-- modal edition des programss -->
     @foreach($programms as $prog)
-    <div class="modal fade" id="edit_progModal" tabindex="-1" role="dialog" aria-labelledby="update_progModalLabel" aria-hidden="true">
+    <div class="modal fade" id="edit_progModal_{{ $prog->id }}" tabindex="-1" role="dialog" aria-labelledby="update_progModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -601,18 +593,29 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <form action="{{route('admin.programms.programms.update','programms')}}" method="post">
-                    {{method_field('patch')}}
-                    {{@csrf_field()}}
+                <form class="form program_form_edit" action="{{route('admin.programms.programms.update','programms')}}" method="post" enctype="multipart/form-data">
+                    {{ method_field('patch') }}
+                    {{ csrf_field() }}
                     <div class="modal-body">
-                        <input type="hidden" name="prog" id="prog_id" value="{{$prog->id}}">
-                        <label for="libele" style="color:beige;" class="text-dark">{{ __('Wording') }}</label>
-                        <input  id="libele" type="text" class="form-control @error('name') is-invalid @enderror text-center" name="libele" value="{{ old('name') }}" required autocomplete="name" autofocus>
-                        @error('libele')
-                        <span class="invalid-feedback" role="alert">
-                            <strong>{{ $message }}</strong>
-                        </span>
-                        @enderror
+                        <input type="hidden" name="program_edit_id" value="{{$prog->id}}">
+                        <div class="form-group">
+                            <label for="program_edit_libele_{{ $prog->id }}" class="text-dark">{{ __('Wording') }}</label>
+                            <input  id="program_edit_libele_{{ $prog->id }}" type="text" class="form-control" name="program_edit_libele" value="{{ $prog->libele }}" required>
+                        </div>
+                        <div class="form-group form-row">
+                            <div class="col">
+                                <label for="program_edit_img_{{ $prog->id }}">Image du programme</label>
+                                <input type="file" name="program_edit_img" id="program_edit_img_{{ $prog->img }}" class="form-control">
+                            </div>
+                            <div class="col">
+                                <p>Image attaché</p>
+                                <img src="{{ asset($prog->image) }}" alt="image_program" height="50px" width="auto">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="program_edit_desc_{{ $prog->id }}">Description du programme</label>
+                            <textarea name="program_edit_desc" id="program_edit_desc_{{ $prog->id }}" class="form-control" rows="3">{{ old('program_edit_desc') ?? $prog->description }}</textarea>
+                        </div>
 
                     </div>
                     <div class="modal-footer">
@@ -739,8 +742,26 @@
 @endsection
 
 @section('js')
-<script src="{{ asset('/tinymce/jquery.tinymce.min.js')}}"></script>
-<script src="{{ asset('/tinymce/tinymce.min.js')}}"></script>
-<script src="{{ asset('/js/admin/editor.js')}}"></script>
+<script type="text/javascript">
+    let edit_prog_forms = $('.program_form_edit');
 
+    for (const form of edit_prog_forms) {
+        // console.log(form)
+        form.onsubmit = submitted.bind(this)
+    }
+
+    function submitted(event) {
+        event.preventDefault()
+
+        const form = event.target;
+        const formData = new FormData(form)
+        const data =
+        for (const [key, value] of formData) {
+           output.textContent += `${key}: ${value}\n`;
+        }
+        console.log(form)
+        console.log(formData.entries())
+    }
+
+</script>
 @endsection
