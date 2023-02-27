@@ -1,4 +1,4 @@
-@extends('layouts/admin/app2')
+@extends('layouts.admin.app2')
 
 
 @section('body')
@@ -93,8 +93,6 @@
     </div>
     <!-- fin du row des ajouts de post -->
 
-
-
     <!-- Row pour ajout des niveau -->
     <div class="row">
         <!-- Area Chart -->
@@ -176,8 +174,6 @@
     </div>
     <!-- fin du row des ajouts des niveau -->
 
-
-
     <!-- Row pour ajout des diplome -->
     <div class="row">
         <!-- Area Chart -->
@@ -258,8 +254,7 @@
     </div>
     <!-- fin du row des ajouts de diplome -->
 
-
-    <!-- row de l'affichage des post -->
+    <!-- row de l'affichage des Faculty -->
     <div class="row">
         <!-- Area Chart -->
         <div class="col-xl-12 col-lg-12">
@@ -376,9 +371,7 @@
     </div>
     <!-- fin du row d'affichage des post -->
 
-
-
-    <!-- Row pour ajout des post -->
+    <!-- Row pour ajout des Module -->
     <div class="row">
         <!-- Area Chart -->
         <div class="col-xl-12 col-lg-7">
@@ -454,7 +447,6 @@
     <!-- fin du row des ajouts de post -->
 
     <!-- Content Row -->
-
     <div class="row">
         <!-- Area Chart -->
         <div class="col-xl-12 col-lg-7">
@@ -593,9 +585,9 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <form class="form program_form_edit" action="{{route('admin.programms.programms.update','programms')}}" method="post" enctype="multipart/form-data">
-                    {{ method_field('patch') }}
-                    {{ csrf_field() }}
+                <form class="form program_form_edit" action="{{route('admin.programms.programms.update','programms')}}" method="post" enctype="multipart/form-data" data-prog_id="{{ $prog->i }}">
+                    @method('patch')
+                    @csrf
                     <div class="modal-body">
                         <input type="hidden" name="program_edit_id" value="{{$prog->id}}">
                         <div class="form-group">
@@ -742,26 +734,57 @@
 @endsection
 
 @section('js')
-<script type="text/javascript">
-    let edit_prog_forms = $('.program_form_edit');
+    <script type="text/javascript">
+        let edit_prog_forms = $('.program_form_edit');
 
-    for (const form of edit_prog_forms) {
-        // console.log(form)
-        form.onsubmit = submitted.bind(this)
-    }
-
-    function submitted(event) {
-        event.preventDefault()
-
-        const form = event.target;
-        const formData = new FormData(form)
-        const data =
-        for (const [key, value] of formData) {
-           output.textContent += `${key}: ${value}\n`;
+        for (const form of edit_prog_forms) {
+            form.onsubmit = submitted.bind(this)
         }
-        console.log(form)
-        console.log(formData.entries())
-    }
 
-</script>
+        function submitted(event) {
+            event.preventDefault();
+            const form = event.target;
+
+            // Construire les données du formulire
+            const url = "{{ route('admin.programms.programms.update','programms')}}";
+            const formData = new FormData(form);
+
+            // Active loader
+            // TODO ...
+
+            // Envoyer le formulaire via AJAX
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
+
+            $.ajax({
+                method: "post",
+                url: url,
+                data:  formData,
+                processData: false,
+                contentType: false,
+                success: function (response) {
+                    console.log('success');
+                    console.log(response);
+                    // arreter loader
+
+                    // Reload page
+
+                    // et afficher le message success
+                },
+                error: function (error) {
+                    console.log('error');
+                    console.log(error.responseJSON);
+                    // arreter loader
+
+                    // afficher message d'erreur
+
+                }
+            });
+
+        }
+
+    </script>
 @endsection

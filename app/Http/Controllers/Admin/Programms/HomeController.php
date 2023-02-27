@@ -27,19 +27,35 @@ class HomeController extends Controller
 
     public function update(Request $request)
     {
+        // dd($request->all());
         $validator = validator::make($request->all(),[
-            'libele' => 'required'
+            'program_edit_libele' => 'required|min:2',
+            'program_edit_img' => 'required|image|max:5000',
+            'program_edit_desc' => 'required|min:10'
         ]);
 
-        if ($validator->fails()) {
-            Flashy::error($validator->messages()->first());
-            return redirect()->back();
+        // Valider L'image
+        if ($request->hasFile('program_edit_img')) {
+            // Supprimer l'ancien si y en a
+            // ...
+            // Sinon enregistrer directement
+            $path = $request->file('program_edit_img')->storePublicly('uploads/programs', ['disk' => 'public']);
         }
-        $edite_prog = Program::findOrFail($request->prog);
-        $edite_prog->libele = $request->input('libele');
-        $edite_prog->save();
+
+        if ($validator->fails()) {
+
+            Flashy::error($validator->messages()->first());
+            return response()->json($validator->messages(), 422);
+        }
+
+        $program = Program::findOrFail($request->prog);
+        $program->libele = $request->input('program_edit_libele');
+        $program->description = $request->input('program_edit_desc');
+        if ($path) $program->image = $path;
+        $program->save();
+
         Flashy::success('Your program has been successfully changed');
-        return back();
+        return response()->json($program, 200);
     }
 
     public function store(Request $request)
@@ -48,7 +64,7 @@ class HomeController extends Controller
         $this->validate($request, [
             'program_libele' => 'required',
             'program_img' => 'required|image|max:5000',
-            'program_desc' => 'required'
+            'program_desc' => 'required',
         ]);
 
         // Upload File to Database
@@ -58,7 +74,7 @@ class HomeController extends Controller
         Program::create([
             'libele' => $request->program_libele,
             'image' => $path,
-            'description' => $request->program_desc
+            'description' => $request->program_desc,
         ]);
 
         Flashy::success('Your program has been successfully added');
