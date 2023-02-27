@@ -25,9 +25,9 @@ class DatabaseSeeder extends Seeder
 
         // Seed du directeur des programs
         Team::create([
-            'lastname' => 'Balde',
-            'firstname' => 'Mrs',
-            'job' => 'Director of Program',
+            'lastname' => 'Sow',
+            'firstname' => 'Mr Thierno Isakh',
+            'job' => 'Directeur de l\'institut Daara Luqman Al Hakiim',
             'image' => '/default.jpg'
         ]);
 
@@ -39,15 +39,15 @@ class DatabaseSeeder extends Seeder
 
         // Seed des infos concernant BBC ( address, BP, phone)
         Info::create([
-            'phone' => "+221 33 869 25 00",
-            'address' => "Dakar Mermoz",
-            'email' => "philia@bbc-sn.com",
+            'phone' => "+221 77 355 15 14",
+            'address' => "Rufisque Ouest, Cité Gabon, Dakar",
+            'email' => "support@luqmanalhakiim.com",
             'bp' => "21784"
         ]);
 
         // Seed du compte d'administrateur
         Admin::create([
-            'name' => "Philia Schiemen",
+            'name' => "Administrateur",
             'email' => "admin@admin.com",
             'email_verified_at' => now(),
             'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password

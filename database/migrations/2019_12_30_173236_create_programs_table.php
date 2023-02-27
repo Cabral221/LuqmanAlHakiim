@@ -17,6 +17,8 @@ class CreateProgramsTable extends Migration
             $table->bigIncrements('id');
             $table->string('libele');
             $table->string('slug');
+            $table->string('image');
+            $table->text('description');
             $table->timestamps();
         });
     }

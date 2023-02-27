@@ -26,7 +26,7 @@ class Attachment extends Model
 
     public function upLoadFile(UploadedFile $file)
     {
-        $file =$file->storePublicly('uploads',['disk' => 'public']);
+        $file = $file->storePublicly('uploads',['disk' => 'public']);
         $this->name = basename($file);
         return $this;
     }
