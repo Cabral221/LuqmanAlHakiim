@@ -40,7 +40,7 @@
                 </li>
 
                 <li class="{{ isset($current_page) && $current_page == 'Présentation' ? 'active' : '' }}">
-                    <a href="#" >Présentation</a>
+                    <a href="{{ route('user.about') }}" >Présentation</a>
                 </li>
 
                 <li class="dropdown {{ isset($current_page) && $current_page == 'programs' ? 'active' : '' }}">

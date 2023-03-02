@@ -9,13 +9,13 @@
   <meta name="description" content="">
   <meta name="author" content="Ousmane Diallo">
 
-  <title>BBC | Administration</title>
+  <title>Daara luqmane Al Hakiim | Administration</title>
   <link rel="icon" href="images/logo.png">
-  
+
   <!-- Custom fonts for this template-->
   <link href="{{asset('asset_admin/vendor/fontawesome-free/css/all.min.css')}}" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
-  
+
   <!-- Custom styles for this template-->
   <link href="{{asset('asset_admin/css/sb-admin-2.min.css')}}" rel="stylesheet">
   <link href="{{asset('asset_admin/css/sb-admin-2.css')}}" rel="stylesheet">
@@ -23,22 +23,22 @@
 </head>
 
 <body id="page-top">
-  
+
   <!-- Page Wrapper -->
   <div id="wrapper">
-    
+
     <!-- Sidebar -->
     <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
-      
+
       <!-- Sidebar - Brand -->
-      
+
       <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{ route('admin.welcome') }}">
         <img src="{{asset('images/logo.png')}}" alt="" srcset="" style="width:70px;height:70px; padding:5px;" class="text-center rounded">
       </a>
-      
+
       <!-- Divider -->
       <hr class="sidebar-divider my-0">
-      
+
       <!-- Nav Item - Dashboard -->
       <li class="nav-item active">
         <a class="nav-link" href="{{ route('admin.welcome') }}">
@@ -53,16 +53,16 @@
           <span>WEB MAIL OVH</span>
         </a>
       </li>
-        
+
         <!-- Divider -->
       <hr class="sidebar-divider">
-      
+
       <!-- Heading -->
       <div class="sidebar-heading">
         Interface
       </div>
-      
-      
+
+
       <!-- Nav Item - Utilities Collapse Menu -->
       <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
@@ -80,7 +80,7 @@
           </div>
         </div>
       </li>
-      
+
       <!-- Nav Item - Charts -->
       <li class="nav-item">
         {{-- <!-- <a class="nav-link" href=" {{route('admin.params.infos.index')}} "> --> --}}
@@ -88,33 +88,33 @@
         <i class="fas fa-network-wired"></i>
         <span>Networks and visitors</span></a>
       </li>
-          
+
           <!-- Nav Item - Tables -->
       <li class="nav-item">
         <a class="nav-link" href="{{route('admin.params.admissions.index')}}">
         <i class="fas fa-graduation-cap"></i>
         <span>Admissions</span>@if (App\Helpers\AdmissionHelper::unreadAdmission())<span class="right badge badge-pill badge-success vertical-center" style="float:right;font-size:10px;margin-top:4px">{{ App\Helpers\AdmissionHelper::unreadAdmission() }}</span>@endif</a>
       </li>
-            
+
       <li class="nav-item">
         <a class="nav-link" href="{{route('admin.params.words.index')}}">
         <i class="fab fa-speakap"></i>
         <span>Words</span></a>
       </li>
-              
+
               <!-- Nav Item - Tables -->
               {{-- <li class="nav-item">
                 <a class="nav-link" href="{{route('admin.blog.comments.index')}}">
                   <i class="fas fa-comments"></i>
                   <span>Comments</span></a>
                 </li> --}}
-                
+
       <li class="nav-item">
         <a class="nav-link" href="{{route('admin.blog.news.index')}}">
         <i class="fas fa-calendar-plus"></i>
         <span>News</span></a>
       </li>
-                  
+
       <li class="nav-item">
         <a class="nav-link" href="{{route('admin.blog.messages.index')}}">
           <i class="fas fa-envelope-open-text"></i>
@@ -126,7 +126,7 @@
         <i class="fas fa-align-left"></i>
         <span>Testimony</span></a>
       </li>
-                      
+
                       <!-- Nav Item - Pages Collapse Menu -->
       <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
@@ -144,20 +144,20 @@
           </div>
         </div>
       </li>
-                      
+
       <!-- Divider -->
       <hr class="sidebar-divider d-none d-md-block">
-      
+
                       <!-- Sidebar Toggler (Sidebar) -->
       <div class="text-center d-none d-md-inline">
         <button class="rounded-circle border-0" id="sidebarToggle"></button>
       </div>
-                      
+
     </ul>
     <!-- End of Sidebar -->
-    
+
     <!-- Content Wrapper -->
     <div id="content-wrapper" class="d-flex flex-column">
-      
+
       <!-- Main Content -->
       <div id="content">

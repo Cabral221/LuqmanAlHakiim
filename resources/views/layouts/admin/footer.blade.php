@@ -6,7 +6,7 @@
     <!-- bg-gradient-primary  bg-white-->
     <div class="container my-auto ">
       <div class="copyright text-center my-auto">
-        <span class="text-white">Copyright &copy; <a href="{{ route('user.welcome') }}" style="color: blanchedalmond;text-decoration:none;">BBC UNIVERSITY</a>  2020 - {{ Date('Y') }} | Developed By EMPRO </span>
+        <span class="text-white">Copyright &copy; <a href="{{ route('user.welcome') }}" style="color: blanchedalmond;text-decoration:none;">Daara luqmane Al Hakiim</a>  2020 - {{ Date('Y') }} | Developed By EMPRO </span>
       </div>
     </div>
   </footer>
@@ -43,7 +43,7 @@
   <script src="{{asset('asset_admin/vendor/jquery/jquery.min.js')}}"></script>
   <script src="{{asset('asset_admin/vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
 
-  
+
   <!-- Core plugin JavaScript-->
   <script src="{{asset('asset_admin/vendor/jquery-easing/jquery.easing.min.js')}}"></script>
 
@@ -58,16 +58,16 @@
   <script src="{{asset('asset_admin/js/demo/chart-pie-demo.js')}}"></script>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js" integrity="sha256-T/f7Sju1ZfNNfBh7skWn0idlCBcI3RwdLSS4/I7NQKQ=" crossorigin="anonymous"></script>
-  
+
   @include('flashy::message')
   <script>
 $('#exampleModal').on('show.bs.modal', function (event) {
   var button = $(event.relatedTarget)
-  var info_id = button.data('id') 
-  var email = button.data('email') 
-  var title = button.data('phone') 
-  var adress = button.data('adress') 
-  var bp = button.data('bp') 
+  var info_id = button.data('id')
+  var email = button.data('email')
+  var title = button.data('phone')
+  var adress = button.data('adress')
+  var bp = button.data('bp')
   var modal = $(this)
   modal.find('.modal-body #info_id').val(info_id)
   modal.find('.modal-body #email').val(email)
@@ -80,10 +80,10 @@ $('#exampleModal').on('show.bs.modal', function (event) {
 $('#imageModal').on('show.bs.modal', function (event) {
   console.log('image slide modal')
   var button = $(event.relatedTarget)
-  var info_id = button.data('id') 
-  var name = button.data('name') 
-  var link = button.data('link') 
-  var logo = button.data('logo') 
+  var info_id = button.data('id')
+  var name = button.data('name')
+  var link = button.data('link')
+  var logo = button.data('logo')
   var modal = $(this)
   modal.find('.modal-body #partener-id-' + info_id).val(info_id)
   modal.find('.modal-body #name-partener-' + info_id).val(name)
@@ -95,8 +95,8 @@ $('#imageModal').on('show.bs.modal', function (event) {
 
 $('#update_slides').on('show.bs.modal', function (event) {
   var button = $(event.relatedTarget)
-  var slide_id = button.data('id') 
-  var image = button.data('image') 
+  var slide_id = button.data('id')
+  var image = button.data('image')
   var modal = $(this)
   modal.find('.modal-body #slide-id-' + slide_id).val(info_id)
   Console.log(modal.find('.modal-body #slide-id-' + slide_id))
@@ -107,11 +107,11 @@ $('#update_slides').on('show.bs.modal', function (event) {
 
 $('#edit_teamsModal').on('show.bs.modal', function (event) {
   var button = $(event.relatedTarget)
-  var team_id = button.data('id') 
-  var firstname = button.data('firstname') 
-  var lastname = button.data('lastname') 
-  var job = button.data('job') 
-  var image = button.data('image') 
+  var team_id = button.data('id')
+  var firstname = button.data('firstname')
+  var lastname = button.data('lastname')
+  var job = button.data('job')
+  var image = button.data('image')
   var modal = $(this)
   modal.find('.modal-body #team-id-' + team_id).val(team_id)
   modal.find('.modal-body #firstname-team-'+ team_id).val(firstname)
@@ -124,8 +124,8 @@ $('#edit_teamsModal').on('show.bs.modal', function (event) {
 
 $('#edit_progModal').on('show.bs.modal', function (event) {
   var button = $(event.relatedTarget)
-  var prog_id = button.data('id') 
-  var libele = button.data('libele') 
+  var prog_id = button.data('id')
+  var libele = button.data('libele')
   var modal = $(this)
   modal.find('.modal-body #prog_id').val(prog_id)
   modal.find('.modal-body #libele').val(libele)
@@ -135,10 +135,10 @@ $('#edit_progModal').on('show.bs.modal', function (event) {
 
 $('#edit_moduleModal').on('show.bs.modal', function (event) {
   var button = $(event.relatedTarget)
-  var module = button.data('id') 
-  var libele = button.data('libele') 
-  var filiere = button.data('filiere') 
-  var niveau = button.data('niveau') 
+  var module = button.data('id')
+  var libele = button.data('libele')
+  var filiere = button.data('filiere')
+  var niveau = button.data('niveau')
   var modal = $(this)
   modal.find('.modal-body #module').val(module)
   modal.find('.modal-body #libele').val(libele)
@@ -149,8 +149,8 @@ $('#edit_moduleModal').on('show.bs.modal', function (event) {
 
 $('#wordModal').on('show.bs.modal', function (event) {
   var button = $(event.relatedTarget)
-  var word_id = button.data('id') 
-  var editor = button.data('editor') 
+  var word_id = button.data('id')
+  var editor = button.data('editor')
   var modal = $(this)
   modal.find('.modal-body #word_id').val(word_id)
   modal.find('.modal-body #editor').val(editor)
@@ -160,8 +160,8 @@ $('#wordModal').on('show.bs.modal', function (event) {
 
 $('#edit_niveauModal').on('show.bs.modal', function (event) {
   var button = $(event.relatedTarget)
-  var niv_id = button.data('id') 
-  var libele_niv = button.data('libele_niv') 
+  var niv_id = button.data('id')
+  var libele_niv = button.data('libele_niv')
   var modal = $(this)
   modal.find('.modal-body #niv_id').val(niv_id)
   modal.find('.modal-body #libele_niv').val(libele_niv)
@@ -171,8 +171,8 @@ $('#edit_niveauModal').on('show.bs.modal', function (event) {
 
 $('#edit_diplomeModal').on('show.bs.modal', function (event) {
   var button = $(event.relatedTarget)
-  var dip_id = button.data('id') 
-  var libele_dip = button.data('libele_dip') 
+  var dip_id = button.data('id')
+  var libele_dip = button.data('libele_dip')
   var modal = $(this)
   modal.find('.modal-body #dip_id').val(dip_id)
   modal.find('.modal-body #libele_dip').val(libele_dip)
@@ -183,10 +183,10 @@ $('#edit_diplomeModal').on('show.bs.modal', function (event) {
 
 $('#bookModal').on('show.bs.modal', function (event) {
   var button = $(event.relatedTarget)
-  var book_id = button.data('id') 
-  var title = button.data('title') 
-  var auteur = button.data('auteur') 
-  var dateOut = button.data('dateOut') 
+  var book_id = button.data('id')
+  var title = button.data('title')
+  var auteur = button.data('auteur')
+  var dateOut = button.data('dateOut')
   var modal = $(this)
   modal.find('.modal-body #book_id').val(book_id)
   modal.find('.modal-body #title').val(title)
@@ -199,8 +199,8 @@ $('#bookModal').on('show.bs.modal', function (event) {
 
 $('#edit_imgModal1').on('show.bs.modal', function (event) {
   var button = $(event.relatedTarget)
-  var img_id = button.data('id') 
-  var libele = button.data('libele') 
+  var img_id = button.data('id')
+  var libele = button.data('libele')
   var modal = $(this)
   modal.find('.modal-body #image_id').val(img_id)
   modal.find('.modal-body #libele').val(libele)
@@ -212,9 +212,9 @@ $('#edit_imgModal1').on('show.bs.modal', function (event) {
 
 $('#edit_newModal').on('show.bs.modal', function (event) {
   var button = $(event.relatedTarget)
-  var new_id = button.data('id') 
-  var libele = button.data('libele') 
-  var date = button.data('date') 
+  var new_id = button.data('id')
+  var libele = button.data('libele')
+  var date = button.data('date')
   var editor = button.data('editor')
   var modal = $(this)
   modal.find('.modal-body #new_id').val(new_id)

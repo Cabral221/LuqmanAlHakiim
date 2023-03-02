@@ -10,5 +10,5 @@ Come back when you want
 @endcomponent
 
 Thanks,<br>
-BBC University 
+Daara luqmane Al Hakiim
 @endcomponent

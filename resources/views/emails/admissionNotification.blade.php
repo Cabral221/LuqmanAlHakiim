@@ -12,10 +12,10 @@ Class : <b>{{ $request['filiere_id']->libele }}</b><br>
 @endcomponent
 
 @component('mail::button', ['url' => route('admin.params.admissions.show',$idRequest)])
-Study this request 
+Study this request
 @endcomponent
 
 
 <br>
-<p sttle="text-align:center">BBC University</p>
+<p sttle="text-align:center">Daara luqmane Al Hakiim</p>
 @endcomponent

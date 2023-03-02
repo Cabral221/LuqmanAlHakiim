@@ -23,16 +23,16 @@
         float: right;
         margin-left: 5px;
     }
-    
+
     .active:after {
         content: "\2796"; /* Unicode character for "minus" sign (-) */
     }
-    
+
     /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
     .active, .collapsible:hover {
         background-color: #ccc;
     }
-    
+
     /* Style the collapsible content. Note: hidden by default */
     .content {
         color: white;
@@ -144,7 +144,7 @@
 <section class="opaqued light-opaqued parallax">
     <div class="section-inner">
         <div class="container">
-            <div class="row"><h3 class="text-dark text-center">BBC on images</h3></div>
+            <div class="row"><h3 class="text-dark text-center">Daara luqmane Al Hakiim en images</h3></div>
             <div class="row">
                 <div class="col-12">
                     @if (isset($galeries) && $galeries->count() > 0)
@@ -171,7 +171,7 @@
 <script>
     var coll = document.getElementsByClassName("collapsible");
     var i;
-    
+
     for (i = 0; i < coll.length; i++) {
         coll[i].addEventListener("click", function() {
             this.classList.toggle("active");
@@ -180,7 +180,7 @@
                 content.style.maxHeight = null;
             } else {
                 content.style.maxHeight = content.scrollHeight + "px";
-            } 
+            }
         });
     }
 </script>

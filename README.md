@@ -1,6 +1,6 @@
-## About Daara Luqman Al Hakiim
+## About Daara luqmane Al Hakiim
 
-<a href="https://luqmanalhakiim.com"><img src="https://luqmanalhakiim.com/images/logo.png" alt="Build Status"> site officiel: https://luqmanalhakiim.com </a>
+<a href="https://luqmanealhakiim.com"><img src="https://luqmanealhakiim.com/images/logo.png" alt="Build Status"> site officiel: https://luqmanealhakiim.com </a>
 
 
 # Required

@@ -8,6 +8,6 @@ if(! function_exists('page_title')){
             return $base_title;
         }
 
-        return $title. ' | ' .$base_title;    
+        return $title. ' | ' .$base_title;
     }
 }

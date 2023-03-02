@@ -9,8 +9,8 @@
   <meta name="author" content="Abdourahmane Diop">
   <meta name="csrf-token" content="{{ csrf_token() }}">
 
-  <title>BBC | Administration</title>
-  <link rel="shortcut icon" href="{{ asset('images/logo.png') }}">
+  <title>Daara luqmane Al Hakiim | Administration</title>
+  <link rel="icon" href="images/logo.png">
 
   @include('layouts.admin.links2')
   @yield('css')

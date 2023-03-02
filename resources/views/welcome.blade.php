@@ -43,6 +43,7 @@
     </div>
 </div>
 {{-- Fin du Mot de Bienvenue --}}
+
 <section class="white-wrapper py-5">
     <div class="container">
         <h2 class="section-title text-center">Nos Programmes</h2>
@@ -50,11 +51,11 @@
             @foreach ($programs as $program)
             <div class="col-sm-4">
                 <div class="card card-program">
-                    <img src="{{ asset('default-slide.jpg') }}" alt="image" class="card-img-top">
+                    <img src="{{ asset($program->image) }}" alt="image" class="card-img-top">
                     <div class="card-body text-center">
                         <h5 class="card-title">{{ $program->libele }}</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="{{ route('user.programs.index') }}" class="btn btn-primary">Plus...</a>
+                        <p class="card-text">{{ Str::substr($program->description, 0, 90) . ' ...' }}</p>
+                        <a href="{{ route('user.programs.show', $program) }}" class="btn btn-primary">Plus...</a>
                     </div>
                 </div>
             </div>
@@ -64,7 +65,9 @@
 </section>
 
 
+
 {{-- Old Programs section --}}
+{{--
 <section class="white-wrapper">
     <div class="py-5">
         <div class="container text-dark">
@@ -139,7 +142,7 @@
                             @foreach ($books as $book)
                             <div class="media">
                                 <div class="pull-left">
-                                    <img class="" width="100px" src="{{ $book->image }}" alt="BBC BOOK {{ $book->title }}">
+                                    <img class="" width="100px" src="{{ $book->image }}" alt="luqmanee Al Hakiim BOOK {{ $book->title }}">
                                 </div>
                                 <div class="media-body text-dark">
                                     <div>
@@ -161,20 +164,20 @@
                 </div>
             </div>
 
-            {{-- Carousel galery --}}
+            <-- Carousel galery --/>
             <div class="row">
                 <div class="col-12">
                     <section class="opaqued light-opaqued parallax">
                         <div class="section-inner2">
                             <div class="container">
-                                <div class="row"><h3 class="text-dark text-center">BBC on images</h3></div>
+                                <div class="row"><h3 class="text-dark text-center">luqmane Al Hakiim en images</h3></div>
                                 <div class="row">
                                     @if (isset($galeries) && $galeries->count() > 0)
                                     <div class="col-12">
                                         <ul class="owl-carousel-paged testimonial-owl wow fadeIn list-unstyled" data-items="4" data-items-desktop="[1200,4]" data-items-desktop-small="[980,4]" data-items-tablet="[768,3]" data-items-mobile="[479,2]">
                                             @foreach ($galeries as $galery)
                                             <li>
-                                                <img src="{{ $galery->image }}" class="img-responsive" alt="BBC SN IMAGE">
+                                                <img src="{{ $galery->image }}" class="img-responsive" alt="luqmane Al Hakiim SN IMAGE">
                                             </li>
                                             @endforeach
                                         </ul>
@@ -194,11 +197,15 @@
                     </section>
                 </div>
             </div>
-            {{-- /end Carousel galery --}}
+            <-- /end Carousel galery --/>
         </div>
     </div>
 </section>
+--}}
 {{-- END Old Program section --}}
+
+
+
 
 {{-- Testimonial Section --}}
 <div class="bg-white text-center pt-5 pb-5">
@@ -234,7 +241,6 @@
 {{-- Document Section --}}
 <div class="bg-dark text-white pt-5 pb-5">
     <div class="container">
-
         <h3 class="text-center">Utils documents</h3>
         @if (isset($docs) && $docs->count() > 0)
         <div class="row pt-5 pb-5 text-white text-bold">
@@ -255,7 +261,6 @@
         @else
         <p class="text-center">Aucun document pour le moment</p>
         @endif
-
     </div>
 </div>
 {{-- End Doc Section --}}
@@ -300,12 +305,12 @@
         <div class="modal-content text-dark">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="myModalLabel">Welcome to BBC University</h4>
+                <h4 class="modal-title" id="myModalLabel">Welcome to Daara luqmane Al Hakiim</h4>
             </div>
             <div class="modal-body">
                 <div class="alert alert-info">
                     <div class="mt-auto mr-auto mb-3 text-center">
-                        <img src="{{ asset('images/logo.png') }}" width="100px" alt="BBC University">
+                        <img src="{{ asset('images/logo.png') }}" width="100px" alt="Daara luqmane Al Hakiim">
                     </div>
                 </div>
                 <h3 class="text-center ">{{ $modalWelcome->title }}</h3>
@@ -346,18 +351,5 @@
             }
         });
     }
-</script>
-<script type="text/javascript">
-    $(document).ready(function() {
-        'use strict';
-        jQuery('#headerwrap').backstretch([
-        @foreach($slides as $slide)
-        ["{{ asset($slide->image) }}"],
-        @endforeach
-        ], {
-            duration: 5000,
-            fade: 500
-        });
-    });
 </script>
 @endsection

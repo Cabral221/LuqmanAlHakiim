@@ -7,5 +7,5 @@ we acknowledge receipt of your message, we will respond as soon as possible.
 
 
 Thanks,<br>
-BBC University
+Daara luqmane Al Hakiim
 @endcomponent

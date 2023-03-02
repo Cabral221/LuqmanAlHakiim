@@ -33,27 +33,15 @@ class ProgrammeController extends Controller
 
     /**
      *
-     * @param  int  $id
+     * @param  Program  $program
      * @return \Illuminate\Http\Response
      */
-    public function show(Program $program, Filiere $filiere)
+    public function show(Program $program)
     {
         $info = $this->recapdata();
-        $info['filiere'] = $filiere;
         $info['program'] = $program;
-        
+
         return view('program.show',$info);
-    }
-
-    
-
-    private function recapdata()
-    {
-        
-        $image = Slide::first();
-        $partners = Partner::all();
-        $info = Info::first();
-        return compact(['info','partners','image']);
     }
 
 }

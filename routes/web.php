@@ -25,7 +25,7 @@ Route::post('logout', [
     'as' => 'logout',
     'uses' => 'Auth\LoginController@logout'
 ]);
-            
+
 // Password Reset Routes...
 Route::post('password/email', [
     'as' => 'password.email',
@@ -43,7 +43,7 @@ Route::get('password/reset/{token}', [
     'as' => 'password.reset',
     'uses' => 'Auth\ResetPasswordController@showResetForm'
 ]);
-                            
+
 // Registration Routes...
     // Route::get('register', [
     //     'as' => 'register',
@@ -74,22 +74,23 @@ Route::get('admin/generate-pdf','Admin\PDFController@generatePDF')->name('admin.
 // Route grouper des utilisateur
 Route::name('user.')->group(function(){
     Route::get('/', 'User\HomeController@welcome')->name('welcome');
-    
+
     Route::get('/attests', 'User\PageController@attests')->name('attest');
+    Route::get('/about','User\PageController@about')->name('about');
     Route::get('/library','User\PageController@library')->name('library');
     Route::get('/contact','User\PageController@contact')->name('contact');
     Route::get('/member','User\PageController@member')->name('member');
 
     // Route poour les news
     Route::get('/news/{new}', 'User\NewsController@show')->name('news.show');
-    
+
     // Route pour les programmes
     Route::get('/programs','User\ProgrammeController@index')->name('programs.index');
-    Route::get('/{program}/{filiere}','User\ProgrammeController@show')->name('programs.show');
-    
+    Route::get('/sprograms/{program:slug}','User\ProgrammeController@show')->name('programs.show');
+
     // Route pour le newsletter
     Route::resource('/networks','User\NetworkController')->only(['store']);
-    
+
     // Routes pour lo post de  messages
     Route::post('/message','User\MessageController@store')->name('message');
 
@@ -113,7 +114,7 @@ Route::middleware(['middleware' => 'auth:admin'])->prefix('admin/')->name('admin
         Route::post('/response','Admin\Blog\MessageController@response')->name('messages.response');
 
     });
-    
+
     Route::prefix('programms')->name('programms.')->group(function(){
         Route::resource('/programms','Admin\Programms\HomeController');
         Route::resource('/filliers','Admin\Programms\FillierController');
@@ -123,18 +124,18 @@ Route::middleware(['middleware' => 'auth:admin'])->prefix('admin/')->name('admin
         Route::resource('/specialites','Admin\Programms\SpecialiteController');
         // Route::resource('/unites','Admin\Programms\UniteController');
     });
-    
+
     Route::prefix('templaits')->name('templaits.')->group(function(){
         // Route::resource('/alerts','Admin\Templaits\AlertController');
         Route::resource('/slides','Admin\Templaits\SlideController');
     });
-    
+
     Route::prefix('members')->name('members.')->group(function(){
         Route::resource('/teams','Admin\Members\TeamController');
         Route::resource('/networks','Admin\Members\NetworkController')->only(['index','destroy']);
         Route::resource('/link','Admin\Members\LinkController')->only(['store','destroy',]);
     });
-    
+
     Route::prefix('params')->name('params.')->group(function(){
         Route::resource('/infos','Admin\Params\InfoController');
         Route::resource('/admissions','Admin\Params\AdmissionController');
@@ -146,6 +147,6 @@ Route::middleware(['middleware' => 'auth:admin'])->prefix('admin/')->name('admin
     Route::get('/','Admin\HomeController@welcome')->name('welcome');
     Route::get('/admin.edite/{id}','Admin\Auth\AdminController@edite')->name('edite');
     Route::get('/{id}/admin.update','Admin\Auth\AdminController@update')->name('update');
-         
+
 });
-                                    
+

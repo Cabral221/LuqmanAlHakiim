@@ -35,8 +35,8 @@ class NotificationMessageCreated extends Mailable
      */
     public function build()
     {
-        return $this->from(Admin::first()->email,'BBC University')
-                    ->subject('BBC acknowledgment of receipt')
+        return $this->from(Admin::first()->email,'Daara luqmane Al Hakiim')
+                    ->subject('luqmane Al Hakiim acknowledgment of receipt')
                     ->markdown('emails.notifmessagesforuser');
     }
 }

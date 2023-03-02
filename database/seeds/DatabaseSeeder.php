@@ -26,23 +26,26 @@ class DatabaseSeeder extends Seeder
         // Seed du directeur des programs
         Team::create([
             'lastname' => 'Sow',
-            'firstname' => 'Mr Thierno Isakh',
-            'job' => 'Directeur de l\'institut Daara Luqman Al Hakiim',
-            'image' => '/default.jpg'
+            'firstname' => 'Monsieur Thierno Ishakh',
+            'job' => 'Director of Program',
+            'image' => '/images/dg.jpg'
         ]);
 
         // Seed du mot de bienvenue
         Word::create([
-            'content' => 'Ceci est un texte obtenu a partir du seed des donnes',
+            'content' => "Bienvenue à l’internat « DAARA LUQMANE AL HAKIIM », l’établissement au service de l’éducation. <br>
+                    « L’engagement pour l’excellence est chose qui nous définit. La richesse de notre programme pédagogique confer aux internés de notre établissement une éducation leurs garantissant une réussite dans la vie et l’aptitude de vivre en société selon les enseignements de l’Islam et la Sunnah ». <br>
+                    « Un Daara, Une Ecole et trois Programmes »
+                    ",
             'team_id' => 1,
         ]);
 
-        // Seed des infos concernant BBC ( address, BP, phone)
+        // Seed des infos concernant luqmane Al Hakiim ( address, BP, phone)
         Info::create([
-            'phone' => "+221 77 355 15 14",
-            'address' => "Rufisque Ouest, Cité Gabon, Dakar",
-            'email' => "support@luqmanalhakiim.com",
-            'bp' => "21784"
+            'phone' => "+221 77 388 38 00",
+            'address' => "Rufisque Ouest, Cité Gabon",
+            'email' => "daara@luqmanealhakiim.com",
+            'bp' => "20000",
         ]);
 
         // Seed du compte d'administrateur

@@ -9,12 +9,12 @@
 	<!-- CSRF Token -->
 	<meta name="csrf-token" content="{{ csrf_token() }}">
 
-	<meta name="title" content="Daara Luqman Al Hakiim">
-	<meta name="description" content="Le Daara Luqman Al Hakiim, en plus d'être spécialisé dans l'enseignement du Coran et des sciences religieuse , est un institut de formation enseignement basé sur le programme officiel d'enseignement général">
-	<meta name="keywords" content="internat, daara, daara luqman, luqman, luqman al hakiim, école, coran, islam, school, cours, université, session, classe">
-	
+	<meta name="title" content="Daara luqmane Al Hakiim">
+	<meta name="description" content="Le Daara luqmane Al Hakiim, en plus d'être spécialisé dans l'enseignement du Coran et des sciences religieuse , est un institut de formation enseignement basé sur le programme officiel d'enseignement général">
+	<meta name="keywords" content="internat, daara, daara luqmane, luqmane, luqmane al hakiim, école, coran, islam, school, cours, université, session, classe">
+
 	<title>{{ page_title($title ?? '') }}</title>
-	
+
 	<!-- Styles -->
 	@include('layouts.user.style')
 	@mapstyles
@@ -29,13 +29,13 @@
 			</div>
 		</div> --}}
 		@include('layouts.user.header')
-		
+
 		@yield('text-header')
-		
+
 		@yield('content')
-		
+
 		@include('layouts.user.footer')
-		
+
 		@include('layouts.user.script')
 	</div>
 
@@ -51,8 +51,22 @@
 	<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
 	<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 	<![endif]-->
-		
-	
+    @isset($slides)
+    <script type="text/javascript">
+        $(document).ready(function() {
+            'use strict';
+            jQuery('#headerwrap').backstretch([
+            @foreach($slides as $slide)
+            ["{{ asset($slide->image) }}"],
+            @endforeach
+            ], {
+                duration: 5000,
+                fade: 500
+            });
+        });
+    </script>
+    @endisset
+
 	@yield('js')
 	@include('flashy::message')
 	@mapscripts

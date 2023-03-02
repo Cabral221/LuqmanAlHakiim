@@ -17,7 +17,7 @@
 
 @section('content')
 <div style="height:80px;" class="text-dark text-center">
-    <h2 class="vertical-center">Welcome abord </h2>   
+    <h2 class="vertical-center">Welcome abord </h2>
 </div>
 <section class="dark-wrapper opaqued parallax" data-parallax="scroll" data-image-src="{{ asset('images/bg-study.jpg') }}" data-speed="0.7">
     <div class="container">
@@ -51,13 +51,13 @@
                     </div>
                     <form method="POST" action="{{ route('register') }}" id="form-register" class="form">
                         @csrf
-                        
+
                         <div class="form-group row">
                             <label for="lastname" class="col-md-4 col-form-label text-md-right text-right text-right">{{ __('Last Name') }}</label>
-                            
+
                             <div class="col-md-6">
                                 <input id="lastname" type="text" class="form-control text-white @error('lastname') is-invalid @enderror" name="lastname" value="{{ old('lastname') }}" required autocomplete="lastname">
-                                
+
                                 @error('lastname')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
@@ -65,13 +65,13 @@
                                 @enderror
                             </div>
                         </div>
-                        
+
                         <div class="form-group row">
                             <label for="firstname" class="col-md-4 col-form-label text-md-right text-right text-right">{{ __('First Name') }}</label>
-                            
+
                             <div class="col-md-6">
                                 <input id="firstname" type="text" class="form-control text-white @error('firstname') is-invalid @enderror" name="firstname" value="{{ old('firstname') }}" required autocomplete="firstname">
-                                
+
                                 @error('firstname')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
@@ -79,13 +79,13 @@
                                 @enderror
                             </div>
                         </div>
-                        
+
                         <div class="form-group row">
                             <label for="email" class="col-md-4 col-form-label text-md-right text-right">{{ __('E-Mail Address') }}</label>
-                            
+
                             <div class="col-md-6">
                                 <input id="email" type="email" class="form-control text-white @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
-                                
+
                                 @error('email')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
@@ -93,13 +93,13 @@
                                 @enderror
                             </div>
                         </div>
-                        
+
                         <div class="form-group row">
                             <label for="password" class="col-md-4 col-form-label text-md-right text-right">{{ __('Password') }}</label>
-                            
+
                             <div class="col-md-6">
                                 <input id="password" type="password" class="form-control text-white @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
-                                
+
                                 @error('password')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
@@ -107,15 +107,15 @@
                                 @enderror
                             </div>
                         </div>
-                        
+
                         <div class="form-group row">
                             <label for="password-confirm" class="col-md-4 col-form-label text-md-right text-right">{{ __('Confirm Password') }}</label>
-                            
+
                             <div class="col-md-6">
                                 <input id="password-confirm" type="password" class="form-control text-white" name="password_confirmation" required autocomplete="new-password">
                             </div>
                         </div>
-                        
+
                         <div class="form-group row">
                             <div class="col-sm-8 col-sm-offset-2">
                                 <a href="" onclick="event.preventDefault();document.getElementById('form-register').submit();" class="btn btn-danger btn-block">
@@ -134,7 +134,7 @@
 <section class="opaqued light-opaqued parallax">
     <div class="section-inner">
         <div class="container">
-            <div class="row"><h3 class="text-dark text-center">BBC on images</h3></div>
+            <div class="row"><h3 class="text-dark text-center">Daara luqmane Al Hakiim en images</h3></div>
             <div class="row">
                 <div class="col-12">
                     @if (isset($galeries) && $galeries->count() > 0)

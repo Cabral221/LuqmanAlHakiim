@@ -7,6 +7,7 @@ use App\Models\Info;
 use App\Models\Slide;
 use App\Models\Attest;
 use App\Models\Partner;
+use App\Models\Program;
 use App\Models\Gallerie;
 use Illuminate\Http\Request;
 use MercurySeries\Flashy\Flashy;
@@ -14,7 +15,7 @@ use App\Http\Controllers\Controller;
 
 class PageController extends Controller
 {
-    
+
     public function library()
     {
         $info = $this->recapdata();
@@ -32,6 +33,16 @@ class PageController extends Controller
         $info['current_page'] = 'contact';
         return view('pages.contact',$info);
     }
+
+    public function about()
+    {
+        $info = $this->recapdata();
+        $info['current_page'] = 'about';
+        $info['programs'] = Program::all();
+
+        return view('pages.about',$info);
+    }
+
     public function member()
     {
         $info = $this->recapdata();
@@ -49,12 +60,5 @@ class PageController extends Controller
         return view('pages.attest',$info);
     }
 
-    private function recapdata()
-    {
-        $image = Slide::first();
-        $partners = Partner::all();
-        $info = Info::first();
-        return compact(['info','partners','image']);
-
-    }
+    
 }

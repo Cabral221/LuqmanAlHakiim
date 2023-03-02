@@ -6,7 +6,7 @@
     <div class="section-inner pad-top-200">
         <div class="container vertical-center">
             <div class="intro-text vertical-center text-center smoothie">
-                <div class="intro-heading wow fadeIn heading-font" data-wow-delay="0.2s"><h2>BBC Blog</h2></div>
+                <div class="intro-heading wow fadeIn heading-font" data-wow-delay="0.2s"><h2>Daara luqmane Al Hakiim Blog</h2></div>
                 <div class="intro-sub-heading wow fadeIn secondary-font" data-wow-delay="0.4s">The first UK university in <span class="rotate">Dakar, Senegal</span></div>
                 <a href="{{ route('user.admission') }}" class="btn btn-primary mt-5"><h4>Admission</h4></a>
             </div>
@@ -31,19 +31,19 @@
                 <div class="row">
                     <p>
                        <p> Amet enim labore occaecat nulla dolore magna labore mollit ex. Dolore anim ea non nostrud do aliquip ut aliqua commodo nostrud dolor est exercitation. Amet adipisicing dolor mollit exercitation. Id adipisicing proident sunt ut laborum. Nostrud nisi id cupidatat consequat elit ullamco culpa reprehenderit tempor elit. Officia aute occaecat nisi eiusmod anim quis dolor veniam et et. Sunt laborum esse occaecat tempor dolore dolor enim occaecat amet sit occaecat.</p>
-                        
+
                        <p> Deserunt proident proident laboris eiusmod anim elit. Ex quis commodo esse irure adipisicing exercitation id velit proident nisi elit minim. Mollit minim fugiat dolor voluptate quis magna magna. Duis veniam voluptate nisi do id labore ullamco commodo ullamco labore tempor exercitation. Cillum dolore consectetur ipsum qui veniam nisi elit voluptate cillum adipisicing nulla.</p>
-                        
-                       <p> Cillum occaecat exercitation esse pariatur nostrud ipsum magna do aliqua velit ut ullamco. Ipsum esse pariatur do velit. Commodo aliquip deserunt fugiat dolore nisi exercitation excepteur. Et aute Lorem laboris sit duis mollit cillum irure est laboris dolore quis sint velit. Ullamco nostrud laborum velit reprehenderit qui minim ea incididunt ut id. Cupidatat ipsum incididunt exercitation aute nostrud ad adipisicing Lorem deserunt duis ad nisi. Officia mollit magna dolor minim.</p> 
-                        
+
+                       <p> Cillum occaecat exercitation esse pariatur nostrud ipsum magna do aliqua velit ut ullamco. Ipsum esse pariatur do velit. Commodo aliquip deserunt fugiat dolore nisi exercitation excepteur. Et aute Lorem laboris sit duis mollit cillum irure est laboris dolore quis sint velit. Ullamco nostrud laborum velit reprehenderit qui minim ea incididunt ut id. Cupidatat ipsum incididunt exercitation aute nostrud ad adipisicing Lorem deserunt duis ad nisi. Officia mollit magna dolor minim.</p>
+
                        <p> Adipisicing deserunt consectetur est est. Laborum proident labore tempor laboris deserunt aliqua. Excepteur laboris deserunt commodo dolor commodo ad ut enim reprehenderit ipsum veniam ullamco dolor consectetur. Lorem cupidatat non cupidatat duis duis cillum aliquip non.</p>
-                        
+
                        <p> Excepteur id duis sit tempor ut ad incididunt et elit amet deserunt. Voluptate ut id nulla anim voluptate pariatur sit consequat deserunt eiusmod ullamco fugiat velit exercitation. Dolor id excepteur consequat excepteur ipsum irure commodo nostrud exercitation. Deserunt ea nisi esse sint labore. Esse eiusmod incididunt adipisicing reprehenderit adipisicing dolore non est voluptate irure do cillum eu. In quis quis et est ullamco adipisicing aliqua id. Adipisicing irure deserunt ullamco excepteur.</p>
-                        
+
                        <p> Ut pariatur aute enim velit cillum magna deserunt culpa ad ipsum. Irure id elit incididunt id duis. Ea laboris sunt cupidatat do tempor ex consequat exercitation id laborum. Voluptate cillum et id nulla laborum veniam velit id. Minim laboris esse minim eiusmod voluptate dolore mollit irure voluptate aliqua amet. Consectetur fugiat aliquip non amet laborum. Occaecat quis duis nostrud ipsum nisi consectetur ullamco aliquip labore irure consequat.</p>
-                        
+
                        <p> Anim Lorem mollit sit ex Lorem cillum eu cillum in cupidatat eu eu duis exercitation. Enim ea exercitation tempor quis consectetur officia cillum commodo occaecat velit adipisicing. Proident culpa et adipisicing exercitation reprehenderit consequat consequat amet tempor Lorem fugiat cillum sunt do. Qui elit cupidatat cillum irure duis quis. Dolore nisi tempor consequat amet occaecat occaecat quis Lorem. Aliqua Lorem excepteur laboris id laboris.</p>
-                        
+
                        <p> Est adipisicing veniam consectetur culpa adipisicing esse nostrud ad ea est do eiusmod ullamco non. Ad anim est eu voluptate ea fugiat. In minim veniam labore amet. Sint aliquip ullamco ipsum exercitation quis. Anim enim labore est occaecat eiusmod anim ea laboris consequat ut.</p>
                     </p>
                 </div>
@@ -59,7 +59,7 @@
                                         <span class="heading-font">Dave Evans</span>&nbsp; <small class="secondary-font">30th Jan, 2015</small>
                                     </div>
                                     <p>Was are delightful solicitude discovered collecting man day. Resolving neglected sir tolerably but existence conveying for. Day his put off unaffected literature partiality inhabiting.</p>
-                                    
+
                                 </div>
                                 <!--/.media-->
                             </div>
@@ -72,7 +72,7 @@
                                         <span class="heading-font">Dave Evans</span>&nbsp; <small class="secondary-font">30th Jan, 2015</small>
                                     </div>
                                     <p>Was are delightful solicitude discovered collecting man day. Resolving neglected sir tolerably but existence conveying for. Day his put off unaffected literature partiality inhabiting.</p>
-                                    
+
                                 </div>
                                 <!--/.media-->
                             </div>
@@ -85,7 +85,7 @@
                                         <span class="heading-font">Dave Evans</span>&nbsp; <small class="secondary-font">30th Jan, 2015</small>
                                     </div>
                                     <p>Was are delightful solicitude discovered collecting man day. Resolving neglected sir tolerably but existence conveying for. Day his put off unaffected literature partiality inhabiting.</p>
-                                    
+
                                 </div>
                             </div>
                         </div>

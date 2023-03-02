@@ -43,7 +43,7 @@ class messageCreated extends Mailable
     {
         return $this->from($this->email)
                     ->cc($this->allAdmin)
-                    ->subject('New message from BBC')
+                    ->subject('New message from Daara luqmane Al Hakiim')
                     ->markdown('emails.messageCreated');
     }
 }

@@ -18,5 +18,5 @@ Visit us when you want
 @endcomponent
 
 Thank you for your trust<br>
-{{ 'BBC University' ?? config('app.name') }}
+{{ 'Daara luqmane Al Hakiim' ?? config('app.name') }}
 @endcomponent

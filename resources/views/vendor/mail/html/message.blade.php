@@ -23,7 +23,7 @@
 {{-- Footer --}}
 @slot('footer')
 @component('mail::footer')
-© {{ date('Y') }} {{ 'BBC University' }}. @lang('All rights reserved.')
+© {{ date('Y') }} {{ 'Daara luqmane Al Hakiim' }}. @lang('All rights reserved.')
 @endcomponent
 @endslot
 @endcomponent

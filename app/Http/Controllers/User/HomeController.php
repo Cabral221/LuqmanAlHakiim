@@ -53,16 +53,8 @@ class HomeController extends Controller
         $info['galeries'] = Gallerie::orderBy('created_at','desc')->limit(10)->get();
         $info['news'] = Neew::orderBy('created_at', 'desc')->limit(5)->get();
         $info['modalWelcome'] = Modal::first();
-        
+
         return view('welcome',$info);
     }
 
-    private function recapdata()
-    {
-        $info = Info::first();
-        $partners = Partner::all();
-        $slides = Slide::limit(3)->get();
-        return compact(['info','partners','slides']);
-
-    }
 }
